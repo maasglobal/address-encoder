@@ -1,0 +1,24 @@
+{
+  "name": "address-encoder",
+  "version": "1.0.0",
+  "description": "Encode and decode MaaS's address format",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maasglobal/address-encoder.git"
+  },
+  "author": "James Nguyen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maasglobal/address-encoder/issues"
+  },
+  "homepage": "https://github.com/maasglobal/address-encoder#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "mocha": "^3.3.0"
+  }
+}
