@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- "8"
+script:
+- npm run lint
+- npm test
+deploy:
+  provider: npm
+  email: tech@maas.global
+  api_key: $NPM_TOKEN
+  skip_cleanup: true
+  on:
+    branch: master

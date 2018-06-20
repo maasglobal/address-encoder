@@ -57,11 +57,11 @@ describe('Address encoder', () => {
 
   });
 
-  describe('[NEGATIVE] Should throw error properly', () => {
+  // describe('[NEGATIVE] Should throw error properly', () => {
 
-    let results;
-    let error;
+  //   let results;
+  //   let error;
 
-    const requiredFields = ['country', 'city', 'zipCode', 'streetName', 'streetNumber'];
-  });
+  //   const requiredFields = ['country', 'city', 'zipCode', 'streetName', 'streetNumber'];
+  // });
 });
