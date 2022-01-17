@@ -1,7 +1,7 @@
 {
   "name": "address-encoder",
   "version": "1.0.0",
-  "description": "Encode and decode MaaS's address format",
+  "description": "Encode and decode address format",
   "main": "index.js",
   "scripts": {
     "test": "jest --config jest.config.js",
