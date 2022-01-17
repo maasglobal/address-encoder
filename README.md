@@ -1,6 +1,8 @@
 # MaaS Address Encoder
 
-[![Build Status](https://travis-ci.org/maasglobal/address-encoder.svg?branch=master)](https://travis-ci.org/maasglobal/address-encoder)
+[![Publish Package](https://github.com/maasglobal/address-encoder/actions/workflows/publish.yml/badge.svg)](https://github.com/maasglobal/address-encoder/actions/workflows/publish.yml)
+
+[![codecov](https://codecov.io/gh/maasglobal/address-encoder/branch/main/graph/badge.svg?token=DpOw92qSN3)](https://codecov.io/gh/maasglobal/address-encoder)
 
 ## Install
 
