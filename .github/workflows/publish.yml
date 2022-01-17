@@ -18,6 +18,7 @@ jobs:
       - run: npm run lint
       - run: npm run prettier
       - run: npm test
+      - run: npx codecov
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.PUBLIC_NPM_TOKEN }}
