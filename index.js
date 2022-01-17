@@ -17,12 +17,12 @@ function decode(address, fields) {
     if (!key) throw new Error(`Invalid key ${key}`);
     if (!value) throw new Error(`Invalid value ${value}`);
 
-    if (accumulator.hasOwnProperty(key)) {
+    if (Object.prototype.hasOwnProperty.call(accumulator, key)) {
       throw new Error(`Detect duplication of field ${key} in fromAddress or toAddress`);
     }
 
     if (requiredFields.indexOf(key) !== -1) {
-      requiredFields = requiredFields.filter(field => field !== key);
+      requiredFields = requiredFields.filter((field) => field !== key);
     }
 
     accumulator[key] = value;
