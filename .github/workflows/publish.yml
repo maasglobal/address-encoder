@@ -3,9 +3,11 @@ on:
   push:
     branches:
       - main
-
+  pull_request:
+    branches:
+      - main
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,6 +21,11 @@ jobs:
       - run: npm run prettier
       - run: npm test
       - run: npx codecov
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.PUBLIC_NPM_TOKEN }}
+  publish:
+    if: ${{ github.event_name != 'pull_request' }}
+    needs: ['test']
+    runs-on: ubuntu-latest
+    steps:
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.PUBLIC_NPM_TOKEN }}
