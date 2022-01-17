@@ -1,12 +1,10 @@
+const { expect } = require('chai');
+const index = require('./index');
 
-const expect = require('chai').expect;
-const index = require('../index');
-
-const decode = index.decode;
+const { decode } = index;
 
 describe('Address encoder', () => {
   describe('[POSITIVE] Should decode properly', () => {
-
     let results;
     let error;
 
@@ -23,19 +21,19 @@ describe('Address encoder', () => {
         fields: ['country', 'state', 'city', 'zipCode', 'streetName', 'streetNumber'],
       },
       {
-      // Spaces in-between
+        // Spaces in-between
         text: 'country:New Zealand|state:Bay of Plenty|city:White Pine Bush|zipCode:3191|streetName:White Pine Bush Road|streetNumber:479',
         fields: ['country', 'state', 'city', 'zipCode', 'streetName', 'streetNumber'],
       },
       {
         // Other interesting special characters
-        text: 'country:Aäöم武кв.-`\'\'´`|state:Aäöم武кв.-`\'\'´`|city:Aäöم武кв.-`\'\'´`|zipCode:3191|streetName:Aäöم武кв.-`\'\'´`|streetNumber:479',
+        text: "country:Aäöم武кв.-`''´`|state:Aäöم武кв.-`''´`|city:Aäöم武кв.-`''´`|zipCode:3191|streetName:Aäöم武кв.-`''´`|streetNumber:479",
         fields: ['country', 'state', 'city', 'zipCode', 'streetName', 'streetNumber'],
       },
     ];
 
     try {
-      results = positive.map(testCase => {
+      results = positive.map((testCase) => {
         return {
           decoded: decode(testCase.text, requiredFields),
           fields: testCase.fields,
@@ -50,18 +48,9 @@ describe('Address encoder', () => {
     });
 
     it('Should return all fields in the string', () => {
-      results.forEach(result => {
+      results.forEach((result) => {
         expect(result.decoded).to.have.all.keys(result.fields);
       });
     });
-
   });
-
-  // describe('[NEGATIVE] Should throw error properly', () => {
-
-  //   let results;
-  //   let error;
-
-  //   const requiredFields = ['country', 'city', 'zipCode', 'streetName', 'streetNumber'];
-  // });
 });

@@ -26,5 +26,6 @@ Will be turned into the following object after decoding
 ```
 
 ### Current supports
-  - Required fields: requires different fields to have non-empty value inside the encoded string
-  - Decoding the format
+
+- Required fields: requires different fields to have non-empty value inside the encoded string
+- Decoding the format

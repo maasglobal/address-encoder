@@ -1,0 +1,5 @@
+_meta/**/*
+.vscode
+test/mocks/data/geojson
+test/mocks/data/*.template.json
+test/mocks/data/*.params.json

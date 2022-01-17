@@ -4,8 +4,9 @@
   "description": "Encode and decode MaaS's address format",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "lint": "eslint ."
+    "test": "jest",
+    "lint": "eslint .",
+    "prettier": "prettier --write --ignore-path .gitignore '**/*.{css,html,js,json,md,yaml,yml}'"
   },
   "repository": {
     "type": "git",
@@ -18,12 +19,14 @@
   },
   "homepage": "https://github.com/maasglobal/address-encoder#readme",
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^3.3.0",
-    "eslint": "^2.13.1",
-    "eslint-config-airbnb": "^9.0.1",
-    "eslint-plugin-import": "^1.9.2",
-    "eslint-plugin-jsx-a11y": "^1.5.3",
-    "eslint-plugin-react": "^5.2.2"
+    "chai": "^4.3.4",
+    "eslint": "^8.7.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-maasglobal": "^4.0.1",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "jest": "^27.4.7",
+    "prettier": "^2.5.1"
   }
 }
