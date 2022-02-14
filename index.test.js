@@ -55,7 +55,6 @@ describe('Address encoder', () => {
   });
 
   describe('[NEGATIVE] Should fail to decode duplicate', () => {
-    let results;
     let error;
 
     const requiredFields = ['city'];
@@ -68,7 +67,7 @@ describe('Address encoder', () => {
     ];
 
     try {
-      results = negative.map((testCase) => {
+      negative.map((testCase) => {
         return {
           decoded: decode(testCase.text, requiredFields),
           fields: testCase.fields,
@@ -84,7 +83,6 @@ describe('Address encoder', () => {
   });
 
   describe('[NEGATIVE] Should fail to decode invalid required field', () => {
-    let results;
     let error;
 
     const requiredFields = ['invalid'];
@@ -97,7 +95,7 @@ describe('Address encoder', () => {
     ];
 
     try {
-      results = negative.map((testCase) => {
+      negative.map((testCase) => {
         return {
           decoded: decode(testCase.text, requiredFields),
           fields: testCase.fields,
