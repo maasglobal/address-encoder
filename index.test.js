@@ -78,7 +78,7 @@ describe('Address encoder', () => {
       error = e;
     }
 
-    it('Should not return any error for all cases', () => {
+    it('Should throw error', () => {
       expect(error.message).to.be.equal('Detect duplication of field city in fromAddress or toAddress');
     });
   });
@@ -107,7 +107,7 @@ describe('Address encoder', () => {
       error = e;
     }
 
-    it('Should not return any error for all cases', () => {
+    it('Should throw error', () => {
       expect(error.message).to.be.equal('Missing invalid from input text');
     });
   });
@@ -116,8 +116,11 @@ describe('Address encoder', () => {
     it('Should throw missing address input', () => {
       expect(() => decode(undefined)).to.throw('Missing "address" input');
     });
-    it('Should throw missing address input', () => {
-      expect(() => decode('invalid')).to.throw('Invalid value invalid');
+    it('Should throw invalid value error', () => {
+      expect(() => decode('invalid')).to.throw('Invalid value undefined');
+    });
+    it('Should throw invalid key error', () => {
+      expect(() => decode('|')).to.throw('Invalid key');
     });
   });
 });
