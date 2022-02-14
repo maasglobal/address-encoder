@@ -26,6 +26,6 @@ jobs:
     needs: ['test']
     runs-on: ubuntu-latest
     steps:
-    - run: npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.PUBLIC_NPM_TOKEN }}
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.PUBLIC_NPM_TOKEN }}
